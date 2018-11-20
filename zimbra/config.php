@@ -12,7 +12,7 @@
     define('SCRIPT_TIMEOUT', 0);
 
     // When accessing through a proxy, the "X-Forwarded-For" header contains the original remote IP
-    define('USE_X_FORWARDED_FOR_HEADER', false);
+    define('USE_X_FORWARDED_FOR_HEADER', true);
 
     // When using client certificates, we can check if the login sent matches the owner of the certificate.
     // This setting specifies the owner parameter in the certificate to look at.
@@ -145,7 +145,7 @@ define('FILEAS_ORDER', SYNC_FILEAS_LASTFIRST);
 // MS Outlook 2013+ request up to 512 items to accelerate the sync process.
 // If you detect high load (also on subsystems) you could try a lower setting.
 // max: 512 - value used if mobile does not limit amount of items
-define('SYNC_MAX_ITEMS', 25);
+define('SYNC_MAX_ITEMS', 512);
 
 // The devices usually send a list of supported properties for calendar and contact
 // items. If a device does not includes such a supported property in Sync request,

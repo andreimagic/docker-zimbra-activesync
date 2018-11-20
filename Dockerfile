@@ -3,7 +3,7 @@ LABEL Andrei Dragulescu <andreidragulescu@gmail.com>
 
 RUN apt-get update && apt-get install -y wget
 
-ENV TERM xterm
+# ENV TERM xterm
 
 ENV ZPUSH_URL zpush_default
 ENV ZIMBRA_HOST localhost
@@ -27,6 +27,7 @@ RUN sed -i "s/#ZIMBRA_HOST#/$ZIMBRA_HOST/" /var/www/html/config.php
 COPY zimbra/autodiscover.php /var/www/html/autodiscover/
 COPY zimbra/config.php /var/www/html/config.php
 COPY zimbra/backend-config.php /var/www/html/backend/zimbra/config.php
+COPY zimbra/logrotate /etc/logrotate.d/z-push
 COPY apache/default.vhost /etc/apache2/sites-enabled/000-default.conf
 COPY apache/default-ssl.vhost /etc/apache2/sites-enabled/default-ssl.conf
 COPY apache/z-push.conf /etc/apache2/conf-enabled/z-push.conf
