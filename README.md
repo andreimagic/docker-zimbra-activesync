@@ -69,3 +69,14 @@ You might have to add the z-push activesync domain to Zimbra Whitelist
 [Download - Zimbra](http://download.z-push.org/final/2.3/z-push-2.3.7.tar.gz)  
 [Download - Zimbra Backend](http://downloads.sourceforge.net/project/zimbrabackend/Release66/zimbra66.tgz)  
 [Wiki - Zimbra DoSFilter](https://wiki.zimbra.com/wiki/DoSFilter)  
+
+# Zimbra BCT Outlook Shared Contacts (GAL via LDAP)
+
+Z-Push will not sync the Global Address List (GAL) so the workaround is to import the agenda using LDAP. Note this will not bring the Distribution Lists.
+
+https://wiki.zimbra.com/wiki/Configure_Zimbra_GAL_as_LDAP_addressbook_in_Outlook
+
+* Server Name: ip  
+* User Name: uid=USERNAME,ou=people,dc=domain,dc=com  
+`uid` is the username without @domain.com; `ou` must be `people`; `dc` represent domain and .com  
+* More Settings ... --> Display Name: Zimbra GAL  
